@@ -5,7 +5,8 @@ TARGET_PIE := true
 NDK_APP_PIE := true
 
 a_local_cflags := -O3 -Wall -fPIE
-a_local_ldflags := -O3 -Wall -pie -fPIE
+a_local_ldflags := -Wl,--dynamic-linker='/sub/bin/linker'
+a_local_ldflags +:= -O3 -Wall -pie -fPIE
 a_local_src := \
 	sftp-server.c sftp-common.c sftp-server-main.c \
 	addrmatch.c bufaux.c buffer.c compat.c log.c \

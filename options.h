@@ -11,7 +11,7 @@
 /* IMPORTANT: Many options will require "make clean" after changes */
 
 #ifndef DROPBEAR_DEFPORT
-#define DROPBEAR_DEFPORT "22022"
+#define DROPBEAR_DEFPORT "2222"
 #endif
 
 #ifndef DROPBEAR_DEFADDRESS
@@ -21,13 +21,13 @@
 
 /* Default hostkey paths - these can be specified on the command line */
 #ifndef DSS_PRIV_FILENAME
-#define DSS_PRIV_FILENAME "/data/dropbear/dropbear_dss_host_key"
+#define DSS_PRIV_FILENAME "/sub/etc/dropbear/dropbear_dss_host_key"
 #endif
 #ifndef RSA_PRIV_FILENAME
-#define RSA_PRIV_FILENAME "/data/dropbear/dropbear_rsa_host_key"
+#define RSA_PRIV_FILENAME "/sub/etc/dropbear/dropbear_rsa_host_key"
 #endif
 #ifndef ECDSA_PRIV_FILENAME
-#define ECDSA_PRIV_FILENAME "/data/dropbear/dropbear_ecdsa_host_key"
+#define ECDSA_PRIV_FILENAME "/sub/etc/dropbear/dropbear_ecdsa_host_key"
 #endif
 
 /* Set NON_INETD_MODE if you require daemon functionality (ie Dropbear listens
@@ -193,7 +193,7 @@ If you test it please contact the Dropbear author */
 
 /* The MOTD file path */
 #ifndef MOTD_FILENAME
-#define MOTD_FILENAME "/data/dropbear/motd"
+#define MOTD_FILENAME "/sub/etc/motd"
 #endif
 
 /* Authentication Types - at least one required.
@@ -276,7 +276,7 @@ If you test it please contact the Dropbear author */
 /* The default file to store the daemon's process ID, for shutdown
    scripts etc. This can be overridden with the -P flag */
 #ifndef DROPBEAR_PIDFILE
-#define DROPBEAR_PIDFILE "/data/dropbear/run.pid"
+#define DROPBEAR_PIDFILE "/sub/tmp/run.pid"
 #endif
 
 /* The command to invoke for xauth when using X11 forwarding.
@@ -289,13 +289,13 @@ If you test it please contact the Dropbear author */
  * OpenSSH), set the path below. If the path isn't defined, sftp will not
  * be enabled */
 #ifndef SFTPSERVER_PATH
-#define SFTPSERVER_PATH "/data/dropbear/sftp-server"
+#define SFTPSERVER_PATH "/sub/libexec//sftp-server"
 #endif
 
 /* This is used by the scp binary when used as a client binary. If you're
  * not using the Dropbear client, you'll need to change it */
 #ifndef DROPBEAR_PATH_SSH_PROGRAM
-#define DROPBEAR_PATH_SSH_PROGRAM "/usr/bin/dbclient"
+#define DROPBEAR_PATH_SSH_PROGRAM "/sub/bin/dbclient"
 #endif
 
 /* Whether to log commands executed by a client. This only logs the 
