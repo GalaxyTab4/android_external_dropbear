@@ -10,14 +10,14 @@ NDK_APP_PIE := true
 a_local_cflags := -O3 -Wall -fPIE -DDROPBEAR_SERVER -DDROPBEAR_CLIENT 
 #a_local_cflags += -DDEBUG_TRACE
 a_local_cflags += -DDROPBEAR_DEFPORT='"2222"'
-a_local_cflags += -DSFTPSERVER_PATH='"/sub/libexec/sftp-server"'
-a_local_cflags += -DDROPBEAR_PATH_SSH_PROGRAM='"/sub/bin/scp"'
-a_local_cflags += -D_DEFAULT_AUTH_PW_DIR='"/sub/home"'	# default: /data/local/tmp
-a_local_cflags += -DDEFAULT_PATH='"/sub/xbin:/sub/bin:/sbin:/system/sbin:/system/bin:/system/xbin"'
+a_local_cflags += -DSFTPSERVER_PATH='"/sbin/sftp-server"'
+a_local_cflags += -DDROPBEAR_PATH_SSH_PROGRAM='"/sbin/scp"'
+a_local_cflags += -D_DEFAULT_AUTH_PW_DIR='"/sbin"'	# default: /data/local/tmp
+a_local_cflags += -DDEFAULT_PATH='"/sbin:/system/sbin:/system/bin:/system/xbin"'
 
-a_local_cflags += -D_DEFAULT_AUTH_PW_SHELL='"/sub/xbin/bash"'	# default: /system/bin/sh
+a_local_cflags += -D_DEFAULT_AUTH_PW_SHELL='"/sbin/sh"'	# default: /system/bin/sh
 
-a_local_ldflags := -Wl,--dynamic-linker='/sub/bin/linker'
+a_local_ldflags := -Wl,--dynamic-linker='/sbin/linker'
 a_local_ldflags +:= -O3 -Wall -pie -fPIE
 
 a_src_common=dbutil.c buffer.c \
